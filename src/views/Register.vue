@@ -7,7 +7,7 @@
     <div class="form-group row">
         <div class="col-6">
             <label><strong>Name</strong></label>
-            <input type="text"  name="name" placeholder="Name..." v-model="name" required />
+            <input type="text"  name="name" placeholder="Name..." v-model="displayName" required />
         </div>
 
         <div class="col-6">
@@ -73,15 +73,21 @@
 							onmouseover="this.style.backgroundColor='#38d3b0'; this.style.color='#FFF';" type="submit">Register </button>
     </div>
   </form>
+
+
+
+
 </template>
 
 <script>
 import { ref } from "vue";
 import registerUser from "../composables/register";
 
+
+
 export default {
   setup(props, context) {
-    const { error, register } = registerUser();
+    const { error, register, } = registerUser() ;
 
     // refs
     const name = ref("");
@@ -99,6 +105,7 @@ export default {
         context.emit("register"); //context (seria el this)
       }
     };
+
 
     return {
       name,
