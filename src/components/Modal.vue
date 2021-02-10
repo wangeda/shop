@@ -1,38 +1,37 @@
 <template>
-    <div class="backdrop">
-        <div class="modal">
-        <span @click.self="closeModal" class="closeLoginMessage">x</span>
+  <div class="backdrop"  >
+      <div class="myModal">
+          <span @click.self='closeModal' class="closeLoginMessage">x</span>
 
-        <slot>default content</slot>
-        <div class="actions">
-            <slot name="links"></slot>
-        </div>
-        </div>
-    </div>
+          <slot>default content</slot>
+          <div class="actions">
+              <slot name="links"></slot>
+          </div>
+      </div>
+  </div>
 </template>
 
 <script>
 export default {
-    props: ["header", "text"],
+    props:['header', 'text'],
     methods: {
-        closeModal() {
-        this.$emit("close");
-        },
-    },
-};
+        closeModal(){
+            this.$emit('close')
+        }
+    }
+}
 </script>
 
 <style  >
-.modal {
+.myModal {
     width: 400px;
-    height: 30%;
     padding: 20px;
     margin: 100px auto;
     background: white;
     border-radius: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 25px 100px 150px ;
+    grid-template-rows: 25px 100px 50px 50px;
 
 }
 
@@ -74,5 +73,33 @@ export default {
     grid-column: 1/3;
     grid-row: 3/4;
 }
+
+
+.myModal .actions{
+    grid-column: 1/3;
+    grid-row: 4/5;
+    display: flex;
+    justify-content: space-around;
+}
+
+.myModal .actions a {
+    border: 1px solid white;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.myModal .actions .button{
+  color:white;
+  display: flex;
+  align-items: center;
+  border-radius:4px;
+  text-decoration: none;
+  background: rgb(37, 184, 176);;
+  padding: 0 10px 0 10px ;
+}
+
+
+
+
 
 </style>

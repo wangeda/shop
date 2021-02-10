@@ -26,12 +26,10 @@
         
     </div>
     
-    <div class="d-flex justify-content-center">
-      
-    </div>
+
 </form>
 
-
+<!-- TODO mostrar con mensaje de no existe email -->
 <div v-if="showModal">
   <Modal @close="toggleLoginModal" >
     <h1>Second Modal</h1>
@@ -51,6 +49,7 @@ import Modal from '../components/Modal.vue';
 export default {
     name: "Login",
     components: { Modal },
+    
     
         data() {
         return {
@@ -82,6 +81,9 @@ export default {
         toggleLoginModal(){
         this.showModal = !this.showModal
       },
+
+      
+
     },
 
     setup(){
@@ -94,6 +96,7 @@ export default {
             }
             if (email.value === null){
             }else{
+              // TODO traer el showModal e igualarlo a true
               console.log('no existe email')
 
 }
