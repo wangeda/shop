@@ -35,6 +35,16 @@ const routes = [
     name: 'AcountSettingsEdit',
     component: () => import('../views/AccountSettings/AccountSettingsEdit.vue')
   },
+  {
+    path: '/products',
+    name: 'Products',
+    component: () => import('../views/Products.vue')
+  },
+  {
+    path: '/shoppingCard',
+    name: 'ShoppingCard',
+    component: () => import('../views/GeneralShoppingCard.vue')
+  },
 ]
 
 const router = createRouter({

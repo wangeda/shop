@@ -2,7 +2,7 @@
 <nav class="row">
 				
     <!--Logo-->
-    <div class="col-sm-2 mb-2">
+    <div class="col-sm-2 ">
         <router-link to="/Home"><img src="@/assets/logoPV.png" alt=""></router-link>
     </div>
 
@@ -18,7 +18,7 @@
     <!-- Second part of menu -->
     <div class="col-sm-4 d-flex align-items-center justify-content-around">
 
-        <div class="col-3 item-nav" ><i class="fa fa-shopping-bag"></i></div>
+        <router-link to="/shoppingCard" class="col-6 item-nav"><div><i class="fa fa-shopping-bag"></i></div></router-link>
 
         <div class="col-5 item-nav">
             <!-- if doesn´t exist user -->
@@ -83,11 +83,12 @@ nav{
 
 .item-nav:hover{
     background: rgb(92, 212, 192, .2);
-   border-radius:3px;
+   border-radius:.5em;
 }
 .dropdown-item:hover{
    background: rgb(92, 212, 192, .2);
    border-radius:3px;
 }
+
 
 </style>

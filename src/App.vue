@@ -1,5 +1,7 @@
 <template>
-    <Header/>
+    <div>
+      <Header/>
+    </div>
 
   <router-view/>
 </template>
@@ -8,6 +10,7 @@
 import Header from '@/components/Header'
 
 export default {
+  name: 'App',
   components: {
     Header
   }
@@ -21,7 +24,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin:2%;
 }
 
 #nav {

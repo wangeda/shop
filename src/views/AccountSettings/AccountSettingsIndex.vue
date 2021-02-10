@@ -11,12 +11,12 @@
     <div class=" col-9 align-items-center d-flex flex-wrap justify-content-around mb-5">
         <div class="col-12">
 
-            Add readonly + nombre campo bbdd
+            <!-- TODO Add + nombre campo bbdd -->
             <form class="d-flex flex-column">
             <div class="form-group row">
                 <div class="col-4">
                     <label><strong>Name</strong></label>
-                    <input type="text" readonly  name="name" />
+                    <input type="text" readonly name="name" />
                 </div>
 
                 <div class="col-4">
@@ -80,7 +80,7 @@ components: { AsideSettingMenu },
 };
 </script>
 
-<style scope>
+<style >
 *{
   margin:0;
   padding: 0;
@@ -129,7 +129,7 @@ form {
 }
 
 label {
-  color: rgb(37, 190, 183);;
+  color: #595A5A;
   display: inline-block;
   margin: 25px 0 15px;
 }

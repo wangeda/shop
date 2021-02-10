@@ -11,17 +11,17 @@
     <div class=" col-9 align-items-center d-flex flex-wrap justify-content-around mb-5">
         <div class="col-12">
 
-            Add nombre campo bbdd
+            <!-- TODO Add nombre campo bbdd -->
             <form class="d-flex flex-column">
             <div class="form-group row">
                 <div class="col-4">
                     <label><strong>Name</strong></label>
-                    <input type="text"  name="name" placeholder="Name..."/>
+                    <input type="text" name="name" placeholder="Name..."/>
                 </div>
 
                 <div class="col-4">
                     <label><strong>Surname</strong></label>
-                    <input type="text"  name="surname" placeholder="Surname..."/>
+                    <input type="text" name="surname" placeholder="Surname..."/>
                 </div>
 
                 <div class="col-4 ">
@@ -91,7 +91,7 @@ components: { AsideSettingMenu },
 };
 </script>
 
-<style scope>
+<style >
 *{
   margin:0;
   padding: 0;
