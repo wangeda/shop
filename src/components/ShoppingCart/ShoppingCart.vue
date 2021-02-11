@@ -13,7 +13,7 @@
 
                 <th scope="col">Total</th>
             </tr>
-        </thead>
+        </thead>wwddsa
 
         <tbody id="items">
             <Item v-for="item in items" :key="item.id"
