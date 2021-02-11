@@ -3,7 +3,7 @@
         <!-- TODO Sustituir los datos por el JSON correcto -->
         <th scope="row"> <img :src='item.thumbnailUrl' alt="">  </th>
         <td>{{ item.title }}</td>
-        <td>Description</td>
+        <td>{{ item.desc}}</td>
         <td >{{ item.cantidad }} </td>
         <td >
             <button class="btn btn-info btn-sm" @click="increase(item.id)">

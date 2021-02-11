@@ -60,10 +60,7 @@ export default {
 
             error: null,
             showModal:false,
-
         };
-
-        
     },
 
     methods: {
@@ -81,9 +78,6 @@ export default {
         toggleLoginModal(){
         this.showModal = !this.showModal
       },
-
-      
-
     },
 
     setup(){
@@ -98,7 +92,6 @@ export default {
             }else{
               // TODO traer el showModal e igualarlo a true
               console.log('no existe email')
-
 }
           };
 

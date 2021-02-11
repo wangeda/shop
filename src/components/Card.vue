@@ -3,7 +3,7 @@
         <div class="card">
             <img :src='producto.thumbnailUrl' :alt="`img-${producto.title}`" class="card-img-top"/>
             <div class="card-body">
-                <h5 class="card-title">{{ producto.title }}</h5>
+                <p class="card-title"><strong>{{ producto.title }}</strong></p>
                 <p class="card-text"><span>{{ producto.precio }} </span>€ </p>
                 <button class="btn btn-primary" @click="add(producto)"   >Buy</button>
             </div>
@@ -21,7 +21,6 @@ export default {
         const add = producto => {
             store.dispatch('addShoppingCart', producto)
         }
-
         return { add }
     }
 }
@@ -33,6 +32,7 @@ export default {
 img{
     width: auto;
 }
+
 
 
 

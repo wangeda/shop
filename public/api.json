@@ -1,38 +1,72 @@
 [
   {
-    "precio": 500,
-    "id": 1,
-    "title": "Café",
-    "thumbnailUrl": "https://picsum.photos/id/0/600"
+      "id": 1,
+      "title": "Dog Collar",
+      "desc": "Leather dog collar",
+      "precio": 5.60,
+      "thumbnailUrl": "https://picsum.photos/id/0/600"
   },
   {
-    "precio": 300,
-    "id": 2,
-    "title": "Pizza",
-    "thumbnailUrl": "https://picsum.photos/id/10/600"
+      "id": 2,
+      "title": "Dog leash",
+      "desc": "Comfortable strap with a range of 5 meters, with a comfortable design for the walk.",
+      "precio": 17.59,
+      "thumbnailUrl": "https://www.kiwoko.com/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dwe73b3d79/images/accesorios_perros_flexi_correa_extensible_new_comfort_cinta_azul_S_5m_FCF10T5251BL_M.jpg"
   },
   {
-    "precio": 100,
-    "id": 3,
-    "title": "Agua",
-    "thumbnailUrl": "https://picsum.photos/id/20/600"
+      "id": 3,
+      "title": "NYLON Dog leash",
+      "desc": "Comfortable strap with a range of 5 meters, with a comfortable design for the walk.",
+      "precio": 22.95,
+      "thumbnailUrl": "https://www.kiwoko.com/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dwb50bac93/images/accesorios_perros_ferplast_correa_nylon_sport_FER75376999_M_2.jpg"
   },
   {
-    "precio": 50,
-    "id": 4,
-    "title": "Sandía",
-    "thumbnailUrl": "https://picsum.photos/id/30/600"
+      "id": 4,
+      "title": "Dog Collar",
+      "desc": "Collar for dogs, with a colorful and comfortable design so as not to harm your pet during the walk.",
+      "precio": 11.99,
+      "thumbnailUrl": "https://www.kiwoko.com/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dwcd3add1c/images/accesorios_perros_arppe_collar_fucsia_beach_ARP72418_M.jpg"
   },
   {
-    "precio": 10,
-    "id": 5,
-    "title": "Mango",
-    "thumbnailUrl": "https://picsum.photos/id/40/600"
+      "id": 5,
+      "title": "Spotlit led Carabiner Light",
+      "desc": "Led collar for dogs, designed with a carabiner so that it can be hung from the collar.",
+      "precio": 6.99,
+      "thumbnailUrl": "https://www.kiwoko.com/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dw88106dd5/images/accesorios_perros_nite_ize_mosqueton_lkuz_NITSLG-06-02_M.jpg"
   },
   {
-    "precio": 150,
-    "id": 6,
-    "title": "Chela",
-    "thumbnailUrl": "https://picsum.photos/id/50/600"
+      "id": 6,
+      "title": "Harness for large dogs black",
+      "desc": "The solid colored Kiwoko leash is perfect for walking your dog. It is adaptable from sizes M-L",
+      "precio": 11.19,
+      "thumbnailUrl": "https://www.kiwoko.com/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dwe4c5fef9/images/accesorios_perros_kiwoko_arnes_perros_grandes_KWK14073_M.jpg"
+  },
+  {
+      "id": 7,
+      "title": "Clean 8 rolls hygienic bags",
+      "desc": "Hygienic bags for dogs, to separate our pet's waste during walks.",
+      "precio": 5.95,
+      "thumbnailUrl": "https://www.kiwoko.com/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dwf6711809/images/accesoriors_perros_nova_clean_pack_8_bolsas_negro_01_NCL70336_M.jpg"
+  },
+  {
+      "id": 8,
+      "title": "Cat Luxyry Bed",
+      "desc": "Comfortable cat bed for your cat to rest.",
+      "precio": 39.95,
+      "thumbnailUrl": "https://www.kiwoko.com/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dw7b779cbe/images/accesorios_gatos_catshion_cuna_luxury_CSH70750_M.jpg"
+  },
+  {
+      "id": 9,
+      "title": "CAT Scratch Bed Bahamas Tube",
+      "desc": "Perfect for sleeping, perfect for hiding. Don't deprive your cat of her two favorite pleasures!",
+      "precio": 39.95,
+      "thumbnailUrl": "https://www.kiwoko.com/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dwd26bf5b8/images/accesorios_gatos_catshion_cama_bahamas_tube_CSH88620_M.jpg"
+  },
+  {
+      "id": 10,
+      "title": "Orthopedic Matrtress",
+      "desc": "Orthopedic mattress for dogs perfect to relieve pressure and relax the muscles of the pet.",
+      "precio": 23.50,
+      "thumbnailUrl": "https://www.kiwoko.com/on/demandware.static/-/Sites-kiwoko-master-catalog/default/dwb8a2e7bd/images/accesorios_perros_cosy_home_colchon_ortopedico_black_napper_COH70307_M.jpg"
   }
-  ]
+]
