@@ -51,7 +51,8 @@
             <div class="form-group row">
                 <div class="col-12">
                     <label><strong>Email</strong></label>
-                    <input type="email" readonly name="email" />
+                    <p>{{user.email}}</p>
+                    
                 </div>
             </div>
         </form>
@@ -72,10 +73,20 @@
 
 
 <script>
+import getUser from '../../composables/user'
 import AsideSettingMenu from "../../components/AsideSettingMenu";
+
 export default {
 
-components: { AsideSettingMenu },
+    components: { AsideSettingMenu },
+
+    setup(){
+
+        const { user } = getUser()
+
+        return { user }
+    }
+
 
 };
 </script>

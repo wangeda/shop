@@ -7,7 +7,7 @@
     <div class="form-group row">
         <div class="col-6">
             <label><strong>Name</strong></label>
-            <input type="text"  name="name" placeholder="Name..." v-model="displayName" required />
+            <input type="text"  name="name" placeholder="Name..." v-model="name" required />
         </div>
 
         <div class="col-6">
@@ -36,7 +36,7 @@
 
         <div class="col-6">
             <label><strong>Date of birth</strong></label>
-            <input type="date"  name="birth" v-model="date_of_birth" required />
+            <input type="date"  name="date_of_birth" v-model="date_of_birth" required />
         </div>
     </div>
 
@@ -82,12 +82,18 @@
 <script>
 import { ref } from "vue";
 import registerUser from "../composables/register";
-
-
+import { useRouter } from 'vue-router'
 
 export default {
   setup(props, context) {
-    const { error, register, } = registerUser() ;
+    const { error, register } = registerUser();
+    const router = useRouter()
+
+
+    //redirect to home view
+    const redirect = ()=>{
+      router.push( {name: 'Home'})
+    }
 
     // refs
     const name = ref("");
@@ -100,24 +106,29 @@ export default {
     const password = ref("");
 
     const handleSubmit = async () => {
-      await register(email.value, password.value);
+      await register(email.value, password.value, name.value, address.value, surname.value, mobile.value, date_of_birth.value, cp.value);
       if (!error.value) {
         context.emit("register"); //context (seria el this)
+
+        redirect()
       }
+      
     };
 
 
     return {
+      redirect,
+      router,
       name,
       surname,
-      mobile, 
+      address,
+      mobile,
       date_of_birth,
       cp,
-      address,
       email,
       password,
       handleSubmit,
-      error,
+      error
     };
   },
 };
