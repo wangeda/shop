@@ -12,8 +12,9 @@ const register = async (email, password, name, address, surname, mobile, date_of
     try {                                                       //intenta
         const res = await auth.createUserWithEmailAndPassword(email, password)      //res -> respuesta.     espera la respuesta de firebase cuando intentas crear cuenta con esos campos (email, password)
         .then(registeredUser=>{
-            firestoredb.collection('users')
-            .add({
+            const userName = email
+            console.log(userName)
+            firestoredb.collection('users').doc(userName).set({
                 uid: registeredUser.user.uid,
                 name: name,
                 surname:surname,
@@ -22,16 +23,12 @@ const register = async (email, password, name, address, surname, mobile, date_of
                 date_of_birth: date_of_birth,
                 cp: cp
             })
+            
         }).catch(function(error){
                     console.log(error)
                 })
                 error.value = null
                 return res
-        //    if (!res) {                                                 //si NO hay respuesta
-    //        throw new Error('Couldn\'t complete the register')      //lanza un error (lanzamiento provocado) 'no se puede completat el registro'
-                        
-        // await res.user.updateProfile({name, address})
-        // error.value = null
 
     } catch(err) {                                                  //captura el error
         console.log(err.message)                                    //muestra el error en la consola

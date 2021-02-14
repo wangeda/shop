@@ -1,6 +1,7 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
 import 'firebase/auth'
+import { ref } from 'vue';
 
 
 const firebaseConfig = {
@@ -19,8 +20,7 @@ const auth = firebase.auth()
 const firestore = firebase.firestore()
 
 
-
 export {
     auth,
-    firestore
+    firestore,
 }

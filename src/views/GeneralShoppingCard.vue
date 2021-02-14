@@ -50,7 +50,6 @@ export default {
 
   setup(){
      const { user } = getUser()
-
      return { user}
   },
   
