@@ -22,13 +22,14 @@
 
         <tfoot id="shoppingCart-Footer">
             <tr>
+                <!-- shows if you have products in your shopping cart. -->
                 <th scope="row" colspan="7" v-if="Object.keys(items).length === 0">Empty Shopping Cart - Start Shopping!</th>
+                <!-- show if you don't have products -->
                 <th v-else scope="row" colspan="7"><ShoppingCartFooter/></th>
             </tr>
         </tfoot>
     </table>
 </div>
-
 </template>
 
 <script>

@@ -142,25 +142,21 @@ export default {
   width: 250px;
   height: 250px;
 }
-
 .profilePhoto {
   width: 150px;
   height: 150px;
   border-radius: 150px;
 }
-
 button {
   color: #38d3b0;
   background: "#FFF";
   border-color: #38d3b0;
   font-weight: bold;
 }
-
 button:hover {
   background: #38d3b0;
   color: #fff;
 }
-
 form {
   min-width: 300px;
   max-width: 800px;
@@ -170,13 +166,11 @@ form {
   padding: 40px;
   border-radius: 10px;
 }
-
 label {
   color: #595a5a;
   display: inline-block;
   margin: 25px 0 15px;
 }
-
 input,
 select {
   display: block;
@@ -186,7 +180,6 @@ select {
   border: none;
   border-bottom: 1px solid rgb(37, 190, 183);
 }
-
 input[type="checkbox"] {
   display: inline-block;
   width: 16px;
@@ -194,11 +187,9 @@ input[type="checkbox"] {
   position: relative;
   top: 2px;
 }
-
 input::placeholder {
   color: rgb(148, 165, 164);
 }
-
 input:focus {
   outline: none;
 }

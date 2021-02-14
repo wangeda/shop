@@ -12,7 +12,6 @@
           name="productName"
           id="name"
         />
-        ç
       </div>
     </div>
 
@@ -56,6 +55,7 @@
     </div>
 
     <button
+      @click="addProduct"
       class="btn mt-5 col-sm-6"
       style="color: #38d3b0; border-color: #38d3b0; font-weight: bold"
       onmouseout="this.style.backgroundColor='#FFF'; this.style.borderColor='#38d3b0'; this.style.color='#38d3b0'"
@@ -64,42 +64,30 @@
     >
       Register
     </button>
-    {{ add2DB() }}
   </form>
 </template>
 
 <script>
-import { ref } from "vue";
 import { firestore } from "../../firebase/config";
 
 export default {
-  data() {
-    return {
-      productName: ref(""),
-      price: ref(""),
-      stock: ref(""),
-      desc: ref(""),
-    };
+  setup() {
+    const firestoredb = firestore;
+    return { firestoredb };
   },
+
   methods: {
-    add2DB(){
-      
-      const firestore = this.firestorebd.collection('pets').doc('products')
-      .set({
+    addProduct() {
+      var docRef = this.firestoredb.collection("pets").doc(this.productName);
+      docRef.set({
         productName: this.productName,
         price: this.price,
         stock: this.stock,
-        desc: this.desc
-      })
-
-    }
+        desc: this.desc,
+      });
+    },
   },
-
-  setup(){
-    const firestorebd = firestore
-    return{firestorebd}
-  }
-}
+};
 </script>
 
 <style scoped>

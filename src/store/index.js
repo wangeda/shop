@@ -1,5 +1,4 @@
-import { createStore } from 'vuex'
-
+import { createStore } from 'vuex'  
 
 export default createStore ({
     state: {
@@ -11,7 +10,7 @@ export default createStore ({
     mutations:{
         setProducto(state, payload){
             state.productos = payload
-            console.log(state.productos)
+          //  console.log(state.productos)
         },
 
         setShoppingCart(state, payload){

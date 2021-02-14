@@ -1,38 +1,36 @@
 <template>
 <nav class="row">
-				
     <!--Logo-->
     <div class="col-sm-2 ">
         <router-link to="/Home"><img src="@/assets/logoPV.png" alt=""></router-link>
     </div>
-
     <!-- First part of menu -->
     <div class="col-sm-3 d-flex align-items-center">
         <router-link class="col-6 item-nav" to="/products"><div>Products</div></router-link>
         <div class="col-6 item-nav">About Us</div>
     </div>
-
     <div class="col-sm-3"></div>
-
-
     <!-- Second part of menu -->
     <div class="col-sm-4 d-flex align-items-center justify-content-around">
-
         <router-link to="/shoppingCard" class="col-6 item-nav"><div><i class="fa fa-shopping-bag"></i></div></router-link>
-
-        <div class="col-5 item-nav">
+        <div class="col-5 ">
             <!-- if doesn´t exist user -->
-            <div v-if="!user" >
+            <!-- TODO fix hover div  -->
+            <div v-if="!user">
                 <div class="d-flex align-items-center justify-content-between">
-                    <router-link class="col-6" to="/login"><div>Sign In</div></router-link>
-                    <router-link class="col-8" to="/register"><div>Register <i class="fa fa-user-plus"></i> </div></router-link>
+                    <div class="item-nav col-6">
+                        <router-link class=" " to="/login"><div>Sign In</div></router-link>
+                    </div>
+                    <div class="item-nav col-8 ">
+                        <router-link class="" to="/register"><div>Register <i class="fa fa-user-plus"></i> </div></router-link>
+                    </div>
                 </div>
             </div>
-
+            <!-- show the email of the user -->
             <div v-else class="">
-                <div class="d-flex justify-content-start">
+                 <div class="d-flex justify-content-start">
                     <div class=" nav-item dropdown-toggle d-flex align-items-center" 
-                    id="UserMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{ user.email}}
+                    id="UserMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{user.email}}  
                     </div> 
                     <div class="dropdown-menu" aria-labelledby="UserMenu">
                         <router-link to="/accountSettings" class="dropdown-item d-block"><i class="fa fa-cog"></i> Ajustes de la cuenta </router-link>
@@ -45,8 +43,6 @@
         
     </div>
 </nav>
-
-
 </template>
 
 <script>
@@ -57,18 +53,18 @@ import {useRouter} from 'vue-router'
 export default {
     name:"Header",
     setup(){                                            //composition Api 
-        const { logout, error } = logoutUser()          //coger datos del logout.js            
-        const { user } = getUser()                      //coger datos del user.js
+        const { logout, error } = logoutUser()          //get data from 'logout.js'           
+        const { user } = getUser()                      //get data from 'user.js'
         const router = useRouter()                      //traer funciones del obj router (por defecto viene el router-link, si quieres más, hay que importar)
-        const handleClick = async () => {               //crear funcion que desloguea
-            await logout()                              //esperar respuesta de firebase
+        const handleClick = async () => {               //create logout function
+            await logout()                              //wait to  firebase answer
             if(!error.value) {                          //si NO hay error
-                console.log('Logout')                   //muestra en la consola 
-                router.push({ name: 'Home' })           //Redirige automáticamente a Home
+                console.log('Logout')                   //show in console
+                router.push({ name: 'Home' })           //redirect to Home
             }
         }
         return { handleClick, user }
-    }
+    },
 };
 </script>
 
@@ -76,19 +72,15 @@ export default {
 nav{
     border-bottom: 1px solid  rgb(215, 223, 222);;
 }
-
 .item-nav{
     padding: 3%;
 }
-
 .item-nav:hover{
     background: rgb(92, 212, 192, .2);
-   border-radius:.5em;
+    border-radius:.5em;
 }
 .dropdown-item:hover{
-   background: rgb(92, 212, 192, .2);
-   border-radius:3px;
-}
-
-
+    background: rgb(92, 212, 192, .2);
+    border-radius:3px;
+} 
 </style>

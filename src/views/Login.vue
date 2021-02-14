@@ -91,7 +91,7 @@ export default {
             if (email.value === null){
             }else{
               // TODO traer el showModal e igualarlo a true
-              console.log('no existe email')
+              console.log('Email doesn\'t exist')
 }
           };
 
