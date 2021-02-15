@@ -5,62 +5,60 @@
             <AsideSettingMenu />
         </div>
         <div class="col-9 align-items-center d-flex flex-wrap justify-content-around mb-5">
-        <div class="col-12">
-            <form class="d-flex flex-column">
-                <div class="form-group row">
-                    <div class="col-4">
-                        <label><strong>Name</strong></label>
-                        <div id="name"></div>
-                    </div>
-                    <div class="col-4">
-                        <label><strong>Surname</strong></label>
-                        <p id="surname"></p>
-                    </div>
-                    <div class="col-4">
-                            <img src="@/assets/userImg.png" class="profilePhoto" />
+            <div class="col-12">
+                <form class="d-flex flex-column">
+                    <div class="form-group row">
+                        <div class="col-4">
+                            <label><strong>Name</strong></label>
+                            <div id="name"></div>
+                        </div>
+                        <div class="col-4">
+                            <label><strong>Surname</strong></label>
+                            <p id="surname"></p>
+                        </div>
+                        <div class="col-4">
+                                <img src="@/assets/userImg.png" class="profilePhoto" />
+                            </div>
+                        </div>
+                    <div class="form-group row">
+                        <div class="col-6">
+                            <label><strong>Mobile phone</strong></label>
+                            <p id="mobile"></p>
+                        </div>
+                        <div class="col-6">
+                            <label><strong>Postal Code</strong></label>
+                            <p id="cp"></p>
                         </div>
                     </div>
-                <div class="form-group row">
-                    <div class="col-6">
-                        <label><strong>Mobile phone</strong></label>
-                        <p id="mobile"></p>
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <label><strong>Address</strong></label>
+                            <p id="address"></p>
+                        </div>
                     </div>
-                    <div class="col-6">
-                        <label><strong>Postal Code</strong></label>
-                        <p id="cp"></p>
+                    <div class="form-group row">
+                        <div class="col-12">
+                            <label><strong>Email</strong></label>
+                            <p>{{ user.email }}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-12">
-                        <label><strong>Address</strong></label>
-                        <p id="address"></p>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn mt-5 col-sm-6" type="submit">
+                            <strong>Update</strong>
+                        </button>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-12">
-                        <label><strong>Email</strong></label>
-                        <p>{{ user.email }}</p>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <button class="btn mt-5 col-sm-6" type="submit">
-                        <strong>Update</strong>
-                    </button>
-                </div>
-            </form>
-        </div>
-        <!-- we call the function that brings the user data -->
-        {{ getUsers() }}
+                </form>
+            </div>
+            <!-- we call the function that brings the user data -->
+            {{ getUsers() }}
         </div>
     </div>
 </main>
 </template>
-
 <script>
 import getUser from "../../composables/user";
 import AsideSettingMenu from "../../components/AsideSettingMenu";
 import { firestore } from "../../firebase/config";
-import { ref } from "vue";
 
 export default {
     components: { AsideSettingMenu },
@@ -69,23 +67,17 @@ export default {
     const firestoredb = firestore;
     return { firestoredb, user };
     },
-    data() {
-        return {
-            name: ref(""),
-            surname: ref(""),
-        };
-    },
     methods: {
         getUsers() {
-        const userName = this.user.email;                                                                   //create a constant with the current user value
-        var docRef = this.firestoredb.collection("users").doc(userName);                                    //connect to firebase, look for the collection 'users' and the document 'userName' inside it
+        const userName = this.user.email;                                              //create a constant with the current user value
+        var docRef = this.firestoredb.collection("users").doc(userName);               //connect to firebase, look for the collection 'users' and the document 'userName' inside it
         docRef.get()
             .then(function (doc) {
-            var screen = "";                                                                                //create a string variable
+            var screen = "";                                                           //create a string variable
             if (doc.exists) {
-                var name = doc.data().name;                                                                 //extracts name field from data
-                screen = "<input type='text' id='name' value='" + name + "'>";                              //equals emmpty string to data
-                document.getElementById("name").innerHTML = screen;                                         //print on the screen the string. Now contains data.    Repeat the process for each field
+                var name = doc.data().name;                                            //extracts name field from data
+                screen = "<input type='text' id='name' value='" + name + "'>";         //equals emmpty string to data
+                document.getElementById("name").innerHTML = screen;                    //print on the screen the string. Now contains data.    Repeat the process for each field
 
                 const surname = doc.data().surname;
                 screen = "<input type='text' id='name' value='" + surname + "'>";
@@ -103,8 +95,7 @@ export default {
                 screen = "<input type='text' id='name' value='" + address + "'>";
                 document.getElementById("address").innerHTML = screen;
             } else {
-                // doc.data() will be undefined in this case
-                console.log("No such document!");
+                console.log("No such document!");                                       // doc.data() will be undefined in this case
             }
             })
             .catch(function (error) {
@@ -114,7 +105,6 @@ export default {
     },
 };
 </script>
-
 <style >
 * {
     margin: 0;

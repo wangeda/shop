@@ -2,13 +2,10 @@ import { auth } from '../firebase/config'
 import getUser from './user'
 import { ref } from 'vue'
 
-
 const error = ref(null)
-
 
 const resetPassword = async (emailAddress) => {
     error.value = null
-
     try{
         const res = await auth.sendPasswordResetEmail(emailAddress)
         if ( !res ){
@@ -20,7 +17,6 @@ const resetPassword = async (emailAddress) => {
         error.value = err.message
     }
 }
-
 
 const sendPasswordResetEmail = () => {
     return {  error, resetPassword }

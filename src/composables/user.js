@@ -1,22 +1,17 @@
-import { _ } from 'core-js'                             //importar js   
+import { _ } from 'core-js'                             //import js   
 import { ref } from 'vue'                               
 import { auth } from '../firebase/config'
 
-const user = ref(auth.currentUser)                      //usuario actual
-
+const user = ref(auth.currentUser)                      //current user
 
 //comprobar en la api el usuario
-auth.onAuthStateChanged(_user => {                      //aviso cuando la autentificacion cambia
-    user.value = _user                                  //el valor del obj usuario  == al usuario actual
+auth.onAuthStateChanged(_user => {                      
+    user.value = _user                                  //the value of the object user == to the current user
 })
 
-
 //usar la respuesta de la api
-const getUser = () => {                                 //devuelve el valor del obj usuario                    
+const getUser = () => {                                 //returns the value of the user object                    
     return { user }                                     
 }
 
-
-
-
-export default getUser                                  //exportar para poder usar en toda la app
+export default getUser                                  //export for use throughout the app

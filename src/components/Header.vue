@@ -28,7 +28,7 @@
             </div>
             <!-- show the email of the user -->
             <div v-else class="">
-                 <div class="d-flex justify-content-start">
+                <div class="d-flex justify-content-start">
                     <div class=" nav-item dropdown-toggle d-flex align-items-center" 
                     id="UserMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{user.email}}  
                     </div> 
@@ -40,11 +40,9 @@
                 </div>
             </div>
         </div>
-        
     </div>
 </nav>
 </template>
-
 <script>
 import getUser from '../composables/user'
 import logoutUser from '../composables/logout' 
@@ -55,10 +53,10 @@ export default {
     setup(){                                            //composition Api 
         const { logout, error } = logoutUser()          //get data from 'logout.js'           
         const { user } = getUser()                      //get data from 'user.js'
-        const router = useRouter()                      //traer funciones del obj router (por defecto viene el router-link, si quieres más, hay que importar)
+        const router = useRouter()                      //bring functions of the obj router (default is router-link, if you want more, you have to import)
         const handleClick = async () => {               //create logout function
             await logout()                              //wait to  firebase answer
-            if(!error.value) {                          //si NO hay error
+            if(!error.value) {                          //if NO error
                 console.log('Logout')                   //show in console
                 router.push({ name: 'Home' })           //redirect to Home
             }
@@ -67,7 +65,6 @@ export default {
     },
 };
 </script>
-
 <style scoped>
 nav{
     border-bottom: 1px solid  rgb(215, 223, 222);;

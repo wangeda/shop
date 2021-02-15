@@ -6,20 +6,15 @@
                 <th scope="col">#</th>
                 <th scope="col">Item</th>
                 <th scope="col">Description</th>
-
                 <th scope="col">Amount</th>
                 <th scope="col">Action</th>
                 <th scope="col">Price</th>
-
                 <th scope="col">Total</th>
             </tr>
-        </thead>wwddsa
+        </thead>
 
         <tbody id="items">
-            <Item v-for="item in items" :key="item.id"
-            :item="item"/>
-        </tbody>
-
+            <Item v-for="item in items" :key="item.id" :item="item"/> </tbody>
         <tfoot id="shoppingCart-Footer">
             <tr>
                 <!-- shows if you have products in your shopping cart. -->
@@ -31,7 +26,6 @@
     </table>
 </div>
 </template>
-
 <script>
 import { computed } from 'vue'
 import {useStore} from 'vuex'
@@ -43,17 +37,13 @@ export default {
     setup(){
         const store = useStore()
         const items = computed(() => store.state.shoppingCart)
-
         return { items }
     }
 }
 </script>
-
 <style scoped>
-
 #shoppingCart-Footer{
     font-size: 25px;
     font-weight: bold;
 }
-
 </style>

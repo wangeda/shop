@@ -1,14 +1,11 @@
 <template>
-    <th scope="row" colspan="2">Total Amount</th>
-        <td>{{ totalAmount }}</td>
+    <th scope="row" colspan="2"> Total Amount </th>
+        <td> {{ totalAmount }} </td>
         <td>
-            <button class="btn btn-danger btn-sm" @click="clean">
-                Clean
-            </button>
+            <button class="btn btn-danger btn-sm" @click="clean"> Clean </button>
         </td>
         <td class="font-weight-bold"><span> {{ totalPrice }} € </span></td>
 </template>
-
 <script>
 import { computed } from 'vue'
 import {useStore} from 'vuex'

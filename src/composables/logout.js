@@ -1,23 +1,22 @@
 import { ref } from 'vue'
 import { auth } from '../firebase/config'
 
-const error = ref(null)                 //inicializar const error (vacio)
+const error = ref(null)                 //initialise const error (empty)
 
 //solo para consumir api firebase
-const logout = async () => {            //inicia const logout espcificando que es asincrono -> async
-    error.value = null                  //el atributo valor del objeto esta vacio 
-    try{                                //intenta
+const logout = async () => {            //start const logout specifying that it is asynchronous -> async
+    error.value = null                  //the value attribute of the object is empty 
+    try{                                //try
         await auth.signOut()            //await -> espera desloguear de firebase
-    } catch(err) {                      //capturar errores
-        console.log(err.message)        //mostrar el mensaje de error en la consola
-        error.value = err.message       //ponemos el mensaje en el atributo valor del objeto del error
+    } catch(err) {                      //catch errors
+        console.log(err.message)        //show error message on console
+        error.value = err.message       //we put the message in the value attribute of the error object
     }
 }
 
-
 //para usar la respuesta de la api en la app
 const logoutUser= () => {                
-    return { logout, error }             //devuelve respuesta y error (si no hay error, lo devuelve a null)
+    return { logout, error }             //returns response and error (if no error, returns null)
 }
 
-export default logoutUser                      
+export default logoutUser                //export for use throughout the app

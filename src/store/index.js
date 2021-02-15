@@ -6,7 +6,7 @@ export default createStore ({
         shoppingCart: {}
     },
 
-    //the only thing that can modify the state are the mutations. Vuex rule
+    //the only thing that can modify the state are the mutations. (Vuex rule)!!
     mutations:{
         setProducto(state, payload){
             state.productos = payload
@@ -37,7 +37,7 @@ export default createStore ({
     actions: {  
         async fetchData ({ commit }){
             try {
-                const res = await fetch('api.json')
+                const res = await fetch('api.json')     //TODO conectar con firebase para traer el
                 const data = await res.json()
                 commit('setProducto', data)
             } catch (error){
@@ -60,10 +60,8 @@ export default createStore ({
         totalPrice(state){
             return Object.values(state.shoppingCart).reduce((acc, { cantidad, precio }) => acc + cantidad * precio , 0 ) 
         }
-
     },
-
+    
     modules: {
-        
     }
 })

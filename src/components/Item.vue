@@ -25,8 +25,6 @@ export default {
         const decrease = id => { store.commit('decreaseItem', id) }
         return { increase, decrease, firebasedb }
     },
-    methods:{
-    }
 }
 </script>
 <style scoped>

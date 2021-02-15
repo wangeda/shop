@@ -9,7 +9,6 @@
     </div>
     </div>
 </template>
-
 <script>
 export default {
     props:['header', 'text'],
@@ -20,7 +19,6 @@ export default {
     }
 }
 </script>
-
 <style  >
 .myModal {
     width: 400px;
@@ -40,6 +38,11 @@ export default {
     height: 100%;
 }
 .backdrop h1{
+    color:rgb(37, 184, 176);
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+.backdrop h2{
     color:rgb(37, 184, 176);
     grid-column: 1/3;
     grid-row: 2/3;
@@ -85,5 +88,8 @@ export default {
     text-decoration: none;
     background: rgb(37, 184, 176);;
     padding: 0 10px 0 10px ;
+}
+.additionalInfo {
+    font-size:20px
 }
 </style>

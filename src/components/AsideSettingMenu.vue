@@ -19,13 +19,11 @@
         </div>  
 </aside>
 </template>
-
 <script>
 export default {
     name: "AsideSettingMenu"
 };
 </script>
-
 <style scope>
 aside{
     text-align: start;
