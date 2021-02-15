@@ -50,6 +50,11 @@ const routes = [
     name: 'RegisterProduct',
     component: () => import('../views/Products/RegisterProduct.vue')
   },
+  {
+    path: '/termsConditions',
+    name: 'TermsConditions',
+    component: () => import('../views/TermsConditions.vue')
+  },
 ]
 
 const router = createRouter({

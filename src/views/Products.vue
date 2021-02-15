@@ -2,7 +2,7 @@
 <div class="container group-row">
     <Slider></Slider>
     <div class="row">
-        <Card  v-for="producto of productos" :key="producto.id" :producto='producto' />
+        <Card v-for="producto of productos" :key="producto.id" :producto='producto' />
     </div>
 </div>
 </template>
@@ -25,3 +25,6 @@ export default {
     }
 }
 </script>
+<style scoped>
+
+</style>

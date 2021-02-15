@@ -6,11 +6,13 @@
         <td>{{ item.desc}}</td>
         <td >{{ item.cantidad }} </td>
         <td >
-            <button class="btn btn-info btn-sm" @click="increase(item.id)"> + </button>
-            <button class="btn btn-danger btn-sm" @click="decrease(item.id)"> - </button>
+            <div class="row d-flex justify-content-around">
+                <button class="btn btn-info col-4" @click="increase(item.id)"> + </button>
+                <button class="btn btn-danger col-4" @click="decrease(item.id)"> - </button>
+            </div>
         </td>
         <td>{{item.precio}} € </td>
-        <td >{{ item.precio * item.cantidad }} €</td>
+        <td >{{ totalPrice() }} €</td>
       </tr>
 </template>
 <script>
@@ -23,12 +25,20 @@ export default {
         const store = useStore()
         const increase = id => { store.commit('increaseItem', id) }
         const decrease = id => { store.commit('decreaseItem', id) }
-        return { increase, decrease, firebasedb }
+
+        return { increase, decrease, firebasedb,}
     },
+    methods:{
+        totalPrice(){
+            var total = (this.item.precio * this.item.cantidad).toFixed(2)
+            return total
+        }
+    }
 }
 </script>
 <style scoped>
 img{
-    width: 250px;
+    width: 350px;
 }
+
 </style>

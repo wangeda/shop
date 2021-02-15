@@ -1,5 +1,6 @@
 <template>
 <div class="my-5">
+    
     <table class="table">
         <thead>
             <tr>
@@ -14,13 +15,16 @@
         </thead>
 
         <tbody id="items">
-            <Item v-for="item in items" :key="item.id" :item="item"/> </tbody>
+            <Item v-for="item in items" :key="item.id" :item="item"/> 
+        </tbody>
+        
         <tfoot id="shoppingCart-Footer">
-            <tr>
+            <tr >
                 <!-- shows if you have products in your shopping cart. -->
                 <th scope="row" colspan="7" v-if="Object.keys(items).length === 0">Empty Shopping Cart - Start Shopping!</th>
                 <!-- show if you don't have products -->
-                <th v-else scope="row" colspan="7"><ShoppingCartFooter/></th>
+                
+                <th v-else scope="row" colspan="7"  ><ShoppingCartFooter/></th>
             </tr>
         </tfoot>
     </table>
@@ -46,4 +50,5 @@ export default {
     font-size: 25px;
     font-weight: bold;
 }
+
 </style>

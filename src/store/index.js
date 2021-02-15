@@ -1,3 +1,4 @@
+import { firestore } from '../firebase/config'
 import { createStore } from 'vuex'  
 
 export default createStore ({
@@ -37,8 +38,11 @@ export default createStore ({
     actions: {  
         async fetchData ({ commit }){
             try {
-                const res = await fetch('api.json')     //TODO conectar con firebase para traer el
-                const data = await res.json()
+                const firestoredb = firestore
+                const res = await firestoredb.collection('products').get()
+                const data = res.docs.map(doc=>{
+                    return { ...doc.data(), id : doc.id}
+                })
                 commit('setProducto', data)
             } catch (error){
                 console.log(error)
@@ -58,7 +62,7 @@ export default createStore ({
         },
 
         totalPrice(state){
-            return Object.values(state.shoppingCart).reduce((acc, { cantidad, precio }) => acc + cantidad * precio , 0 ) 
+            return Object.values(state.shoppingCart).reduce((acc, { cantidad, precio }) => acc + cantidad * precio, 0 ).toFixed(2)
         }
     },
     

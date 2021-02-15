@@ -1,11 +1,13 @@
 <template>
-<div class="col-12 col-sm-4 col-md-3 col-lg-2 mb-3 mb-3">
-    <div class="card">
+<div class="col-12 col-sm-3 mb-4">
+    <div class="card w-100 d-flex justify-content-center">
         <img :src='producto.thumbnailUrl' :alt="`img-${producto.title}`" class="card-img-top"/>
         <div class="card-body">
             <p class="card-title"><strong>{{ producto.title }}</strong></p>
-            <p class="card-text"><span>{{ producto.precio }} </span>€ </p>
-            <button class="btn btn-primary" @click="add(producto)"   >Buy</button>
+            <div class="row col-12 d-flex align-items-center justify-content-around">
+                <p class="card-text btn col-sm-6"><span>{{ producto.precio }} </span>€ </p>
+                <button class="btn-primary btn col-sm-6" @click="add(producto)"><i class="fa fa-shopping-cart"></i></button>
+            </div>
         </div>
     </div>
 </div>
@@ -25,7 +27,4 @@ export default {
 }
 </script>
 <style scoped>
-img{
-    width: auto;
-}
 </style>

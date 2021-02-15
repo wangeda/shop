@@ -18,19 +18,19 @@
             <!-- TODO fix hover div  -->
             <div v-if="!user">
                 <div class="d-flex align-items-center justify-content-between">
-                    <div class="item-nav col-6">
-                        <router-link class=" " to="/login"><div>Sign In</div></router-link>
+                    <div class="item-nav p-3 col-6">
+                        <router-link to="/login"><div>Sign In</div></router-link>
                     </div>
-                    <div class="item-nav col-8 ">
-                        <router-link class="" to="/register"><div>Register <i class="fa fa-user-plus"></i> </div></router-link>
+                    <div class="item-nav p-3 col-8 ">
+                        <router-link to="/register"><div>Register <i class="fa fa-user-plus"></i> </div></router-link>
                     </div>
                 </div>
             </div>
             <!-- show the email of the user -->
             <div v-else class="">
-                <div class="d-flex justify-content-start">
-                    <div class=" nav-item dropdown-toggle d-flex align-items-center" 
-                    id="UserMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{user.email}}  
+                <div class="d-flex justify-content-start ">
+                    <div class=" item-nav p-3 dropdown-toggle d-flex align-items-center" 
+                        id="UserMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{user.email}}  
                     </div> 
                     <div class="dropdown-menu" aria-labelledby="UserMenu">
                         <router-link to="/accountSettings" class="dropdown-item d-block"><i class="fa fa-cog"></i> Ajustes de la cuenta </router-link>

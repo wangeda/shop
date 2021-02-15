@@ -1,7 +1,7 @@
 <template>
 <!-- if user exists, show the shopping cart -->
 <div v-if="user">
-  <h1>Shopping Cart </h1>
+  <h2>Order Summary </h2>
   <ShoppingCart/>
 </div>
 <!-- if it does't exist, displays the modal  -->
@@ -43,3 +43,10 @@ export default {
   },
 }
 </script>
+<style scoped>
+h2{
+    text-align: start;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+</style>

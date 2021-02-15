@@ -49,7 +49,7 @@
     </div>
     <div class="terms">
         <label class="col-sm-12">
-            <input type="checkbox" required v-model="terms"> Accept <a href="">terms and conditions</a>
+            <input type="checkbox" required v-model="terms"> Accept <router-link to="/termsConditions">terms and conditions</router-link>
         </label>
     </div>
     <div class="d-flex justify-content-center">
