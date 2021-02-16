@@ -1,8 +1,8 @@
 <template>
     <tr>
         <!-- TODO Sustituir los datos por el JSON correcto -->
-        <th scope="row"> <img :src='item.thumbnailUrl' alt="">  </th>
-        <td>{{ item.title }}</td>
+        <th scope="row"> <img :src='item.img' alt="">  </th>
+        <td>{{ item.name }}</td>
         <td>{{ item.desc}}</td>
         <td >{{ item.cantidad }} </td>
         <td >
@@ -11,7 +11,7 @@
                 <button class="btn btn-danger col-4" @click="decrease(item.id)"> - </button>
             </div>
         </td>
-        <td>{{item.precio}} € </td>
+        <td>{{item.price}} € </td>
         <td >{{ totalPrice() }} €</td>
       </tr>
 </template>
@@ -30,7 +30,7 @@ export default {
     },
     methods:{
         totalPrice(){
-            var total = (this.item.precio * this.item.cantidad).toFixed(2)
+            var total = (this.item.price * this.item.cantidad).toFixed(2)
             return total
         }
     }

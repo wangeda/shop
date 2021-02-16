@@ -20,7 +20,6 @@ export default {
         const totalAmount = computed(() => store.getters.totalAmount )
         const totalPrice = computed(() => store.getters.totalPrice )
 
-
         //curly brackets for things that will be executed. Parentheses for things to return
         const clean = () => {store.commit('cleanShoppingCard')}
         //we need return all things that we want use in the template

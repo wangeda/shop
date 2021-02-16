@@ -62,7 +62,7 @@ export default createStore ({
         },
 
         totalPrice(state){
-            return Object.values(state.shoppingCart).reduce((acc, { cantidad, precio }) => acc + cantidad * precio, 0 ).toFixed(2)
+            return Object.values(state.shoppingCart).reduce((acc, { cantidad, price }) => acc + cantidad * price, 0 ).toFixed(2)
         }
     },
     
