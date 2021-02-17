@@ -1,22 +1,46 @@
 <template>
-<div class="col-12 col-sm-3 mb-4">
-    <div class="card w-100 d-flex justify-content-center">
-        <img :src='producto.img' :alt="`img-${producto.name}`" class="card-img-top"/>
-        <div class="card-body">
-            <p class="card-title"><strong>{{ producto.name }}</strong></p>
-            <div class="row col-12 d-flex align-items-center justify-content-around">
-                <p class="card-text btn col-sm-6"><span>{{ producto.price }} </span>€ </p>
-                <button class="btn-primary btn col-sm-6" @click="add(producto)"><i class="fa fa-shopping-cart"></i></button>
-            </div>
-        </div>
+
+<div  @click="toggleModal" class="card m-1" style="width: 20rem; max-heigth:450px; min-heigth:450px">
+    <img :src=producto.img  alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{producto.name}}</h5>
+        <p class="card-text d-flex justify-content-between align-items-center font-weight-bold">{{producto.price}}€ 
+            <button class="btn btn-primary" @click="add(producto)"><i class="fa fa-shopping-cart"></i> Buy</button>
+        </p>
     </div>
 </div>
+
+
+<div v-if="showModal">
+  <Modal class="productModal" @close="toggleModal">
+    <h2> {{producto.name}} </h2>
+    <p class="additionalInfo"> {{producto.desc}} </p>
+  </Modal>
+</div>
+
+
+
+
+
 </template>
 <script>
 import { useStore } from 'vuex'
+import Modal from './Modal'
 
 export default {
     props: [ 'producto' ],
+    components:{Modal},
+    data(){
+        return{
+            showModal:false,
+        }
+    },
+
+    methods:{
+    toggleModal(){
+        this.showModal = !this.showModal
+      }
+    },
     setup(){
         const store = useStore()
         const add = producto => {
@@ -26,5 +50,18 @@ export default {
     }
 }
 </script>
+
 <style scoped>
+.productModal{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    top: 0;
+    left: 0;
+
+}
 </style>

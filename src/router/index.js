@@ -36,7 +36,7 @@ const routes = [
     component: () => import('../views/AccountSettings/AccountSettingsEdit.vue')
   },
   {
-    path: '/products',
+    path: '/products/:slug',
     name: 'Products',
     component: () => import('../views/Products.vue')
   },

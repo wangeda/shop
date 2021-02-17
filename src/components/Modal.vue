@@ -22,6 +22,7 @@ export default {
 <style  >
 .myModal {
     width: 400px;
+    max-height: 500px;
     padding: 20px;
     margin: 100px auto;
     background: white;

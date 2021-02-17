@@ -31,7 +31,7 @@ export default createStore ({
         decreaseItem(state, payload){
             state.shoppingCart[payload].cantidad = state.shoppingCart[payload].cantidad - 1
             if(state.shoppingCart[payload].cantidad === 0){
-                delete state.shoppingCart[payload]          //si llega a 0 sacamos el producto
+                delete state.shoppingCart[payload]          //if it reaches 0 we remove the product
             }
         }
     },

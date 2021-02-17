@@ -6,16 +6,25 @@
     </div>
     <!-- First part of menu -->
     <div class="col-sm-3 d-flex align-items-center">
-        <router-link class="col-6 item-nav" to="/products"><div>Products</div></router-link>
+        <div class="dropdown col-6 item-nav">
+            <div class=" dropdown-toggle " type="button" id="productMenu" data-toggle="dropdown" >
+                Products
+            </div>
+            <div class="dropdown-menu" aria-labelledby="productMenu">
+                <router-link to="/products/pets" class="dropdown-item">Pets</router-link>
+                <router-link to="/products/crafts" class="dropdown-item">Crafts</router-link>
+                <router-link to="/products/garden" class="dropdown-item">Garden</router-link>
+            </div>
+        </div>
         <div class="col-6 item-nav">About Us</div>
     </div>
+
     <div class="col-sm-3"></div>
     <!-- Second part of menu -->
     <div class="col-sm-4 d-flex align-items-center justify-content-around">
         <router-link to="/shoppingCard" class="col-6 item-nav"><div><i class="fa fa-shopping-bag"></i></div></router-link>
         <div class="col-5 ">
             <!-- if doesn´t exist user -->
-            <!-- TODO fix hover div  -->
             <div v-if="!user">
                 <div class="d-flex align-items-center justify-content-between">
                     <div class="item-nav p-3 col-6">
