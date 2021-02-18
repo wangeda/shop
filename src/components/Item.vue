@@ -1,6 +1,5 @@
 <template>
     <tr>
-        <!-- TODO Sustituir los datos por el JSON correcto -->
         <th scope="row"> <img :src='item.img' alt="">  </th>
         <td>{{ item.name }}</td>
         <td>{{ item.desc}}</td>
@@ -40,5 +39,4 @@ export default {
 img{
     width: 350px;
 }
-
 </style>
