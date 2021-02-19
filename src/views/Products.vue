@@ -1,6 +1,9 @@
 <template>
 
-    <Slider></Slider>
+    <div  >
+        <Slider ></Slider>
+
+    </div>
 
 
 
