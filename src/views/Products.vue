@@ -1,11 +1,10 @@
 <template>
 
-    <div  >
-        <Slider ></Slider>
+    <div>
+        <h1>Special Spring Promotions</h1>
+        <Slider/>
 
     </div>
-
-
 
 
 <div class="row d-flex justify-content-center mt-3 offset-lg-1 col-lg-10 w-100" id="articlesCards">
