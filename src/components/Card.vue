@@ -1,26 +1,23 @@
 <template>
 
-<div  @click="toggleModal" class="card m-1" style="width: 20rem; max-heigth:450px; min-heigth:450px">
-    <img :src=producto.img  alt="Card image cap">
+<div class="card m-1" style="width: 20rem; max-heigth:450px; min-heigth:450px">
+    <img :src=producto.img  alt="Card image cap" @click="toggleModal">
     <div class="card-body">
-        <h5 class="card-title">{{producto.name}}</h5>
+        <h5 class="card-title" @click="toggleModal" >{{producto.name}}</h5>
         <p class="card-text d-flex justify-content-between align-items-center font-weight-bold">{{producto.price}}€ 
             <button class="btn btn-primary" @click="add(producto)"><i class="fa fa-shopping-cart"></i> Buy</button>
         </p>
     </div>
 </div>
 
-
+<!-- TODO add img to the modal  -->
 <div v-if="showModal">
   <Modal class="productModal" @close="toggleModal">
-    <h2> {{producto.name}} </h2>
+    <h2> {{producto.name}} </h2> 
     <p class="additionalInfo"> {{producto.desc}} </p>
+
   </Modal>
 </div>
-
-
-
-
 
 </template>
 <script>
@@ -62,6 +59,9 @@ export default {
     align-content: center;
     top: 0;
     left: 0;
-
+}
+.modal-img{
+    width:100px;
+    position:absolute;
 }
 </style>

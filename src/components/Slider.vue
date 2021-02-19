@@ -31,7 +31,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="carousel-item justify-content-around" style="width:800px;" v-if="productos[2]" >
                     <h3>{{productos[2].name}}</h3>
                     <div class="d-flex justify-content-around align-items-center">
@@ -46,7 +45,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="carousel-item justify-content-around" style="width:800px;" v-if="productos[3]" >
                     <h3>{{productos[3].name}}</h3>
                     <div class="d-flex justify-content-around align-items-center">
@@ -61,7 +59,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="carousel-item justify-content-around" style="width:800px;" v-if="productos[4]" >
                     <h3>{{productos[4].name}}</h3>
                     <div class="d-flex justify-content-around align-items-center">
@@ -76,8 +73,6 @@
                         </div>
                     </div>
                 </div>
-
-                
                 <div class="carousel-item justify-content-around" style="width:800px;" v-if="productos[5]" >
                     <h3>{{productos[5].name}}</h3>
                     <div class="d-flex justify-content-around align-items-center">
@@ -92,7 +87,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="carousel-item justify-content-around" style="width:800px;" v-if="productos[6]" >
                     <h3>{{productos[6].name}}</h3>
                     <div class="d-flex justify-content-around align-items-center">
@@ -107,7 +101,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="carousel-item justify-content-around" style="width:800px;" v-if="productos[7]" >
                     <h3>{{productos[7].name}}</h3>
                     <div class="d-flex justify-content-around align-items-center">
@@ -122,8 +115,6 @@
                         </div>
                     </div>
                 </div>
-
-
                 <div class="carousel-item justify-content-around" style="width:800px;" v-if="productos[8]" >
                     <h3>{{productos[8].name}}</h3>
                     <div class="d-flex justify-content-around align-items-center">
@@ -138,7 +129,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="carousel-item justify-content-around" style="width:800px;" v-if="productos[9]" >
                     <h3>{{productos[9].name}}</h3>
                     <div class="d-flex justify-content-around align-items-center">
@@ -158,7 +148,6 @@
         </div>
     </div>
 </div>
-
 </template>
 <script>
 import { useStore } from 'vuex'
@@ -170,9 +159,7 @@ export default {
     components: {Card},
     setup(){
         const store = useStore()
-        onMounted(() => {
-            store.dispatch('fetchData')
-        })
+        onMounted(() => { store.dispatch('fetchData') })
         const productos = computed(() => store.state.productos)
         return { productos  }
     },
@@ -182,7 +169,6 @@ export default {
 img{
     max-width: 150px;
 }
-
 .promotion{
     color:red;
 }

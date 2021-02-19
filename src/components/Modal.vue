@@ -5,6 +5,7 @@
             <slot>default content</slot>
             <div class="actions">
             <slot name="links"></slot>
+            <slot name="img"></slot>
         </div>
     </div>
     </div>
