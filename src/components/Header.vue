@@ -6,7 +6,7 @@
     </div>
     <!-- First part of menu -->
     <div class="col-sm-3 d-flex align-items-center">
-        <div class="dropdown col-6 item-nav">
+        <div class="dropdown col-4 item-nav">
             <div class=" dropdown-toggle " type="button" id="productMenu" data-toggle="dropdown" >
                 Products
             </div>
@@ -16,7 +16,8 @@
                 <router-link to="/products/garden" class="dropdown-item">Garden</router-link>
             </div>
         </div>
-        <div class="col-6 item-nav">About Us</div>
+        <div class="col-4 item-nav">About Us</div>
+        <router-link to="/contact" class="col-4 p-3 item-nav">Contact</router-link>
     </div>
 
     <div class="col-sm-3"></div>
@@ -36,7 +37,7 @@
                 </div>
             </div>
             <!-- show the email of the user -->
-            <div v-else class="">
+            <div v-else>
                 <div class="d-flex justify-content-start ">
                     <div class=" item-nav p-3 dropdown-toggle d-flex align-items-center" 
                         id="UserMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{user.email}}  

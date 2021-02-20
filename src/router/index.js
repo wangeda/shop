@@ -55,6 +55,11 @@ const routes = [
     name: 'TermsConditions',
     component: () => import('../views/TermsConditions.vue')
   },
+  {
+    path: '/contact',
+    name: 'contactForm',
+    component: () => import('../views/contactForm.vue')
+  },
 ]
 
 const router = createRouter({
