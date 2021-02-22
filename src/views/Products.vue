@@ -13,7 +13,9 @@
     </div>
 </div>
 
-
+<div>
+    <Footer/>
+</div>
 </template>
 <script>
 import { useStore } from 'vuex'
@@ -21,10 +23,11 @@ import { computed, onMounted } from 'vue'
 import Card from '../components/Card'
 import Slider from './../components//Slider'
 import Modal from '../components/Modal'
+import Footer from '../components/Footer'
 
 export default {
     name:"Products",
-    components: { Card, Slider, Modal },
+    components: { Card, Slider, Modal, Footer },
     props: [ 'producto' ],
     data(){
         return{
