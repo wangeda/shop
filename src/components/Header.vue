@@ -16,7 +16,7 @@
                 <router-link to="/products/garden" class="dropdown-item">Garden</router-link>
             </div>
         </div>
-        <div class="col-4 item-nav">About Us</div>
+        <router-link to="/about" class="col-4 p-3 item-nav">About Us</router-link>
         <router-link to="/contact" class="col-4 p-3 item-nav">Contact</router-link>
     </div>
 

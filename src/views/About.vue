@@ -1,9 +1,12 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-    <input type="text" v-modal="name" ref="name">
-    <button @click="add2DB(name)">Añadir</button>
-  </div>
+ <div>
+   <h2>About Us</h2>
+   <p>Welcome to petVet, here you will find everything you need for your pet's needs, 
+     the care of your garden and all the utilities for your crafts.
+ </p>
+    <h2>Where we are</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3489.652446049568!2d-13.654608655315595!3d28.99766830000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc4623f688372165%3A0xdf13bffcf1ba9b68!2sCanary%20Island%20Publications!5e0!3m2!1ses!2ses!4v1614001826861!5m2!1ses!2ses" width="600" height="450" style="border:0;" loading="lazy"></iframe>
+ </div>
 </template>
 
 <script>
