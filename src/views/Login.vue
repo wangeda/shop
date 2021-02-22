@@ -52,6 +52,7 @@ export default {
                 })          
                 .catch((err) => {                                           //catch the error
                     this.error = err.message;                               //save the error msj on the variable (this.error)
+                    this.showModal = true
                 });
         },
         toggleLoginModal(){
