@@ -67,4 +67,8 @@ export default {
   width: 250px;
   height: 250px;
 }
+
+.card:hover{
+  opacity: 0.6;
+}
 </style>
