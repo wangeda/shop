@@ -1,33 +1,30 @@
 <template>
-<div class="footer">
-<div class="row d-flex justify-content-around">
-<a href="#"><i class="fa fa-facebook"></i></a>
-<a href="#"><i class="fa fa-instagram"></i></a>
-<a href="#"><i class="fa fa-youtube"></i></a>
-<a href="#"><i class="fa fa-twitter"></i></a>
-</div>
+  <div class="footer">
+    <div class="row d-flex justify-content-around">
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-instagram"></i></a>
+      <a href="#"><i class="fa fa-youtube"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+    </div>
 
-<div class="row">
-<ul>
-<li><a href="../views/About.vue">Contact us</a></li>
-<li><a href="#">Our Services</a></li>
-<li><a href="#">Privacy Policy</a></li>
-<li><a href="../views/TermsConditions.vue">Terms & Conditions</a></li>
-</ul>
-</div>
+    <div class="row">
+      <ul>
+        <li><a href="../contact">Contact us</a></li>
+        <li><a href="#">Our Services</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="../TermsConditions">Terms & Conditions</a></li>
+      </ul>
+    </div>
 
-<div class="row d-flex justify-content-center">
-MAEWA Copyright © 2021 Maewa - All rights reserved 
-</div>
-</div>
-
+    <div class="row d-flex justify-content-center">
+      MAEWA Copyright © 2021 Maewa - All rights reserved
+    </div>
+  </div>
 </template>
-
 <script>
 export default {
-    name:"Footer",
+  name: "Footer",
 };
-
 </script>
 
 <style scoped>

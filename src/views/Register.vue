@@ -4,7 +4,8 @@
     <div class="form-group row">
         <div class="col-6">
             <label><strong>Name</strong></label>
-            <input type="text"  name="name" placeholder="Name..." v-model="name" required />
+            <input type="text"  name="name" placeholder="Name..." v-model="name" v-on:change="isNameValid" required />
+            <p id="nameInfo"></p>
         </div>
         <div class="col-6">
             <label><strong>Surname</strong></label>
@@ -18,13 +19,15 @@
         </div>
         <div class="col-4">
             <label><strong>Postal Code</strong></label>
-            <input type="text"  name="cp" placeholder="Postal Code..." v-model="cp" required />
+            <input type="text"  name="cp" placeholder="Postal Code..." v-model="cp" v-on:change="isCpValid" required />
+            <p id="cpInfo"></p>
         </div>
     </div>
     <div class="form-group row">
         <div class="col-6">
             <label><strong>Mobile phone</strong></label>
-            <input type="text"  name="surname" placeholder="Mobile phone..." v-model="mobile" required />
+            <input type="text"  name="mobile" placeholder="Mobile phone..." v-on:change="isMobileValid" v-model="mobile" required />
+            <p id="mobileInfo"></p>
         </div>
         <div class="col-6">
             <label><strong>Date of birth</strong></label>
@@ -34,22 +37,25 @@
     <div class="form-group row">
         <div class="col-12">
             <label><strong>Email</strong></label>
-            <input type="email" name="email" placeholder="Email..." v-model="email" required />
+            <input type="email" name="email" placeholder="Email..." v-model="email"  v-on:change="isEmailValid"   required />
+            <p id="emailInfo"></p>
         </div>
     </div>
     <div class="form-group row">
         <div class="col-6">
             <label><strong>Password</strong></label>
-            <input type="password" id="password" placeholder="Password..." required v-model="password" />
+            <input type="password" id="password" placeholder="Password..." v-on:change="isPasswordValid" required v-model="password" />
+            <p id="passwordInfo"></p>
         </div>
         <div class="col-6">
             <label><strong>Repeat Password</strong></label>
-            <input type="password" placeholder="Repeat password ... " required />
+            <input type="password" placeholder="Repeat password ... " v-model="repeatPassword" v-on:change="isPasswordRepeat" required />
+            <p id="repeatPasswordInfo"></p>
         </div>
     </div>
     <div class="terms">
         <label class="col-sm-12">
-            <input type="checkbox" required v-model="terms"> Accept <router-link to="/termsConditions">terms and conditions</router-link>
+            <input type="checkbox" required> Accept <router-link to="/termsConditions">terms and conditions</router-link>
         </label>
     </div>
     <div class="d-flex justify-content-center">
@@ -59,6 +65,7 @@
         </button>
     </div>
 </form>
+
 </template>
 <script>
 import { ref } from "vue";
@@ -66,6 +73,70 @@ import registerUser from "../composables/register";
 import { useRouter } from 'vue-router'
 
 export default {
+  data(){
+    const regexEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const regexName = /^[A-Z]([a-z]{2,8})$|^[A-Z]([a-z]{2,8}) [A-Z]([a-z]{2,8})$/;
+    const regexMobile = /^[679]\d{8}$/i;
+    const regexCp = /^(?:0[1-9]|[1-4]\d|5[0-2])\d{3}$/;
+    const regexPassword = /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{7,}$/;
+    const repeatPassword = ref('')
+
+
+  return {regexEmail, regexName, regexMobile, regexCp, regexPassword, repeatPassword}
+  },
+  methods:{
+    isEmailValid() {
+      if (this.regexEmail.test(this.email)) {
+        // hide error
+      } else {
+        const email = document.getElementById('emailInfo')
+        email.textContent='Your email address is not valid'
+      }
+    },
+
+    isNameValid() {
+      if (this.regexName.test(this.name)) {
+        // hide error
+      } else {
+        const name = document.getElementById('nameInfo')
+        name.textContent='It must be start with a Capital Letter'
+      }
+    },
+
+    isMobileValid() {
+      if (this.regexMobile.test(this.mobile)) {
+        // hide error
+      } else {
+        const mobile = document.getElementById('mobileInfo')
+        mobile.textContent="Your number must start with '6', '7' or '9'"
+      }
+    },
+    
+    isCpValid() {
+      if (this.regexCp.test(this.cp)) {
+        // hide error
+      } else {
+        const cp = document.getElementById('cpInfo')
+        cp.textContent="Please enter a valid postal code"
+      }
+    },
+
+    isPasswordValid() {
+      if (this.regexPassword.test(this.password)) {
+        // hide error
+      } else {
+        const password= document.getElementById('passwordInfo')
+        password.textContent='Your password must be at least 12 characters long including letters, numbers and a symbol'
+      }
+    },
+
+    isPasswordRepeat(){
+      if(this.password != this.regexPassword){
+        const repeatPassword = document.getElementById('repeatPasswordInfo')
+        repeatPassword.textContent='Password does\nt match'
+    }}
+
+  },
   setup(context) {
     const { error, register } = registerUser();
     const router = useRouter()

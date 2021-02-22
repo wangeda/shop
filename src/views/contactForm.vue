@@ -1,19 +1,21 @@
 <template>
-<div class="card">
-  <div class="card-header">
+<div class="d-flex justify-content-center">
+    <div class="card col-8 ">
+  <h2 class="card-header">
     Contact Us
-  </div>
+  </h2>
   <div class="card-body">
-    <div class="d-flex justify-content-center col-12 mb-5 mt-5">
+    <div class="d-flex justify-content-center col-12 mb-5 ">
             <label class="col-2"><strong>Email:</strong></label>
-            <input class="col-6 form-control" type="email" id="email">
+            <input class="col-10 form-control" type="email" id="email">
         </div>
-        <div class="d-flex justify-content-center col-12">
+        <div class="d-flex justify-content-center col-12 mb-5">
             <label class="col-2"><strong>Message:</strong></label>
-            <textarea id="message" style="resize: none" rows="10" class="form-control col-6" ></textarea>
+            <textarea id="message" style="resize: none" rows="10" class="form-control col-10" ></textarea>
         </div>
-        <button class="btn btn-primary" @click="sendWithAlert" >Send</button>
+        <button class="btn btn-primary " @click="sendWithAlert" >Send Message</button>
   </div>
+</div>
 </div>
 </template>
 
