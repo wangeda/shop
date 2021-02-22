@@ -7,7 +7,7 @@
                 <textarea id="message" style="resize: none" rows="10" ></textarea>
             </div>
         </div>
-        <button @click="send" >Send</button>
+        <button @click="sendWithAlert" >Send</button>
 </template>
 
 <script>
@@ -15,6 +15,17 @@ import sendMessage from '../composables/sendMessage'
 
 export default {
     name: "contactForm",
+    methods:{
+        sendWithAlert(){
+            this.$swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your message has been send',
+            showConfirmButton: false,
+            timer: 1500
+            })
+        }
+    },
     setup(props, context){
         const { error, message } = sendMessage()
         const send = async () => {
