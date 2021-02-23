@@ -1,4 +1,5 @@
 <template>
+<!--
 <div class="d-flex  flex-column ml-5 bg-info">
     <div>
         <h3>1. Who we are?</h3>
@@ -53,7 +54,7 @@
     </div>
 
     
-</div>
+</div>-->
 </template>
 
 <script>
