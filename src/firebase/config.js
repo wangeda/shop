@@ -22,7 +22,7 @@ const firestore = firebase.firestore()
 //create 'products' doc and set in all data (repeat the process) 
 const product1 = firestore.collection('products').doc('product1')
 product1.set({
-    name: "Dog Collar",
+    name: "Dog Collar ",
     desc: "Leather dog collar",
     price: 10.99,
     category: "pets",

@@ -15,6 +15,7 @@
             <h1>You are not logged in!</h1>
             <p class="additionalInfo">You must log in to make purchases</p>
         </Modal>
+        
     </div>
 </div>
 </template>

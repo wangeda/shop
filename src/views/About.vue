@@ -25,31 +25,14 @@
   </div>
 </div>
 
-
-
-
-
-
+<div class="col-12">
+  <Footer/>
+</div>
 </template>
 
 <script>
-import {firestore} from '../firebase/config'
+import Footer from "../components/Footer"
 export default {
-  setup() {
-    const firestore = firestore
-    return { firestore }
-    },
-    data() {
-      return {
-        name: "",
-      }
-    },
-    methods: {
-      add2DB(name) {
-        firestore.collection('names').add({
-          name: 'Mae'
-        })
-      }
-    }
+  components:{ Footer },
 }
 </script>

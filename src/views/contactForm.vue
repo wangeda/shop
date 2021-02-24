@@ -7,20 +7,11 @@
             <div class="card-body">
                 <div class="d-flex justify-content-center col-12 mb-5 ">
                     <label class="col-2"><strong>Email:</strong></label>
-                    <input
-                        class="col-10 form-control"
-                        type="email"
-                        id="email"
-                    />
+                    <input class="col-10 form-control" type="email" id="email" />
                 </div>
                 <div class="d-flex justify-content-center col-12 mb-5">
                     <label class="col-2"><strong>Message:</strong></label>
-                    <textarea
-                        id="message"
-                        style="resize: none"
-                        rows="10"
-                        class="form-control col-10"
-                    ></textarea>
+                    <textarea id="message" style="resize: none" rows="10" class="form-control col-10" ></textarea>
                 </div>
                 <button class="btn btn-primary " @click="sendWithAlert">
                     Send Message
