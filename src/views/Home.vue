@@ -11,7 +11,6 @@
           <Slider/>
       </div>
   </div>
-
   <div class=" d-flex justify-content-around align-items-center mb-5">
       <router-link to="/products/pets">
           <div class="card d-flex align-items-center" style="width: 18rem">
