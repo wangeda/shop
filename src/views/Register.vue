@@ -81,13 +81,13 @@ export default {
     const regexPassword = /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{7,}$/;
     const repeatPassword = ref('')
 
-
-  return {regexEmail, regexName, regexMobile, regexCp, regexPassword, repeatPassword}
+    return {regexEmail, regexName, regexMobile, regexCp, regexPassword, repeatPassword}
   },
   methods:{
     isEmailValid() {
       if (this.regexEmail.test(this.email)) {
-        // hide error
+        const email = document.getElementById('emailInfo')
+        email.textContent=''
       } else {
         const email = document.getElementById('emailInfo')
         email.textContent='Your email address is not valid'
@@ -96,7 +96,8 @@ export default {
 
     isNameValid() {
       if (this.regexName.test(this.name)) {
-        // hide error
+        const name = document.getElementById('nameInfo')
+        name.textContent=''
       } else {
         const name = document.getElementById('nameInfo')
         name.textContent='It must be start with a Capital Letter'
@@ -105,7 +106,8 @@ export default {
 
     isMobileValid() {
       if (this.regexMobile.test(this.mobile)) {
-        // hide error
+        const mobile = document.getElementById('mobileInfo')
+        mobile.textContent=''
       } else {
         const mobile = document.getElementById('mobileInfo')
         mobile.textContent="Your number must start with '6', '7' or '9'"
@@ -114,7 +116,8 @@ export default {
     
     isCpValid() {
       if (this.regexCp.test(this.cp)) {
-        // hide error
+        const cp = document.getElementById('cpInfo')
+        cp.textContent=''
       } else {
         const cp = document.getElementById('cpInfo')
         cp.textContent="Please enter a valid postal code"
@@ -123,10 +126,11 @@ export default {
 
     isPasswordValid() {
       if (this.regexPassword.test(this.password)) {
-        // hide error
+        const password= document.getElementById('passwordInfo')
+        password.textContent=''
       } else {
         const password= document.getElementById('passwordInfo')
-        password.textContent='Your password must be at least 12 characters long including letters, numbers and a symbol'
+        password.textContent='Your password must be at least 7 characters long including letters, numbers and a symbol'
       }
     },
 
@@ -134,10 +138,16 @@ export default {
       if(this.password != this.regexPassword){
         const repeatPassword = document.getElementById('repeatPasswordInfo')
         repeatPassword.textContent='Password does\nt match'
-    }}
+      } 
+      if(this.password == this.repeatPassword){
+        const repeatPassword = document.getElementById('repeatPasswordInfo')
+        repeatPassword.textContent=''      
+      }
+    },
+
 
   },
-  setup(context) {
+  setup(props, context) {
     const { error, register } = registerUser();
     const router = useRouter()
     const redirect = () => {
